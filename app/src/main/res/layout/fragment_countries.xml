@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.example.jetpack.models.Country" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.CountriesFragment">
+
+        <ImageView
+            android:id="@+id/ivCountriesDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:downlaodUrl="@{selectedCountry.imageUrl}"
+            android:minHeight="200dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountryName">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tvCountryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivCountriesDetail"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/aclonica"
+            android:text="@{selectedCountry.countryName}"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/lightYellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvCountryCapital"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCountryRegion"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/aclonica"
+            android:text="@{selectedCountry.countryCapital}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv2"
+            app:layout_constraintTop_toBottomOf="@+id/ivCountriesDetail"></TextView>
+
+        <TextView
+            android:id="@+id/tvCountryRegion"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCountryName"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/aclonica"
+            android:text="@{selectedCountry.countryRegion}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv3"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountryCapital"></TextView>
+
+        <TextView
+            android:id="@+id/tvCountryCurrency"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCountryCapital"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/aclonica"
+            android:text="@{selectedCountry.countryCurrency}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv4"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountryRegion"></TextView>
+
+        <TextView
+            android:id="@+id/tvCountryLanguage"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCountryCurrency"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/aclonica"
+            android:text="@{selectedCountry.countryLanguage}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv5"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountryCurrency"></TextView>
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/aclonica"
+            android:text="Capital: "
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCountriesDetail" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv2"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Region: "
+            android:fontFamily="@font/aclonica"
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv3"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Currency: "
+            android:fontFamily="@font/aclonica"
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv4"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Language: "
+            android:fontFamily="@font/aclonica"
+            android:textColor="@color/yellow"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
